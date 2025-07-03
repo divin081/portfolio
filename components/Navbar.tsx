@@ -38,9 +38,9 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
-            <Link href="/#about" className="text-[17.6px] font-poppins text-white hover:text-primary transition-colors">About</Link>
-            <Link href="/#projects" className="text-[17.6px] font-poppins text-white hover:text-primary transition-colors">Projects</Link>
-            <Link href="/#contact" className="text-[17.6px] font-poppins text-white hover:text-primary transition-colors">Contact</Link>
+            <Link href="/#about" className="text-[17.6px] font-poppins text-white transition-colors transform transition duration-200 hover:scale-105 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#40ffaa] hover:to-[#4079ff]">About</Link>
+            <Link href="/#projects" className="text-[17.6px] font-poppins text-white transition-colors transform transition duration-200 hover:scale-105 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#40ffaa] hover:to-[#4079ff]">Projects</Link>
+            <Link href="/#contact" className="text-[17.6px] font-poppins text-white transition-colors transform transition duration-200 hover:scale-105 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#40ffaa] hover:to-[#4079ff]">Contact</Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -67,9 +67,9 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden py-4 mt-4 border-t border-gray-200 bg-black rounded-b-xl shadow-lg">
             <nav className="flex flex-col space-y-4 px-6">
-              <Link href="/#about" className="text-sm font-medium text-white hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>About</Link>
-              <Link href="/#projects" className="text-sm font-medium text-white hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Projects</Link>
-              <Link href="/#contact" className="text-sm font-medium text-white hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+              <Link href="/#about" className="text-sm font-medium text-white transition-colors transform transition duration-200 hover:scale-105 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#40ffaa] hover:to-[#4079ff]" onClick={() => setIsMenuOpen(false)}>About</Link>
+              <Link href="/#projects" className="text-sm font-medium text-white transition-colors transform transition duration-200 hover:scale-105 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#40ffaa] hover:to-[#4079ff]" onClick={() => setIsMenuOpen(false)}>Projects</Link>
+              <Link href="/#contact" className="text-sm font-medium text-white transition-colors transform transition duration-200 hover:scale-105 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#40ffaa] hover:to-[#4079ff]" onClick={() => setIsMenuOpen(false)}>Contact</Link>
             </nav>
           </div>
         )}
