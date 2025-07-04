@@ -1,11 +1,12 @@
 "use client"
-import Link from "next/link";
+
 import ProfileCard from '../../components/profile'
 import SplitText from '../../components/splitText'
 import GradientText from '../../components/gradientText'
-import ProjectCard from '../../components/ProjectCard'
+
 import SpotlightCard from '../../components/spotlightCard'
 import React from 'react';
+import Image from "next/image";
   
  
 
@@ -85,7 +86,7 @@ export default function Home() {
         <p className="max-w-2xl text-center mt-2 mb-20">Here are some of my favorite projects.</p>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 w-full max-w-5xl px-4">
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
-            <img src="/gff.webp" alt="Portfolio Website" className="w-full h-40 object-cover rounded mb-4" />
+            <Image src="/gff.webp" alt="Portfolio Website" width={800} height={160} className="w-full h-40 object-cover rounded mb-4" />
             <h2 className="text-xl font-semibold mb-2">Global Football Festival</h2>
             <p className="mb-3 text-gray-300">A company website built with Next.js and Cloudflare.</p>
             <div className="flex flex-wrap gap-2 mb-3">
@@ -98,7 +99,7 @@ export default function Home() {
             </div>
           </SpotlightCard>
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
-            <img src="/project-2.png" alt="Blog Platform" className="w-full h-40 object-cover rounded mb-4" />
+            <Image src="/project-2.png" alt="Blog Platform" width={800} height={160} className="w-full h-40 object-cover rounded mb-4" />
             <h2 className="text-xl font-semibold mb-2">Blog Platform</h2>
             <p className="mb-3 text-gray-300">A modern blog platform with markdown support.</p>
             <div className="flex flex-wrap gap-2 mb-3">
@@ -111,7 +112,7 @@ export default function Home() {
             </div>
           </SpotlightCard>
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
-            <img src="/project-3.png" alt="E-commerce Store" className="w-full h-40 object-cover rounded mb-4" />
+            <Image src="/project-3.png" alt="E-commerce Store" width={800} height={160} className="w-full h-40 object-cover rounded mb-4" />
             <h2 className="text-xl font-semibold mb-2">E-commerce Store</h2>
             <p className="mb-3 text-gray-300">A full-featured e-commerce store with Stripe integration.</p>
             <div className="flex flex-wrap gap-2 mb-3">

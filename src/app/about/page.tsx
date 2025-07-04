@@ -1,9 +1,13 @@
+import Image from "next/image";
+
 export default function AboutPage() {
   return (
     <section className="max-w-2xl mx-auto py-12 px-4 flex flex-col items-center text-center">
-      <img
+      <Image
         src="/profile.jpg"
         alt="Profile"
+        width={128}
+        height={128}
         className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary"
       />
       <h1 className="text-3xl font-bold mb-1">Your Name</h1>
