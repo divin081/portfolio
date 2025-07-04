@@ -5,6 +5,7 @@ import SplitText from '../../components/splitText'
 import GradientText from '../../components/gradientText'
 import ProjectCard from '../../components/ProjectCard'
 import SpotlightCard from '../../components/spotlightCard'
+import React from 'react';
   
  
 
@@ -13,6 +14,27 @@ import SpotlightCard from '../../components/spotlightCard'
 
 
 export default function Home() {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target as HTMLFormElement);
+    formData.append("access_key", "a9aa36a6-8186-4e79-8a94-fee23913977b"); // <-- Replace with your API key
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+    const data = await response.json();
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      (event.target as HTMLFormElement).reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <main>
       {/* Hero or Intro Section */}
@@ -84,8 +106,7 @@ export default function Home() {
               <span className="bg-gray-700 px-2 py-1 rounded text-xs font-medium">Node.js</span>
               <span className="bg-gray-700 px-2 py-1 rounded text-xs font-medium">MongoDB</span>
             </div>
-            <div className="mt-auto flex gap-3">
-              <a href="https://github.com/yourusername/blog-platform" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a>
+            <div className="mt-auto  gap-3">
               <a href="https://blog-platform.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Live Demo</a>
             </div>
           </SpotlightCard>
@@ -99,7 +120,6 @@ export default function Home() {
               <span className="bg-gray-700 px-2 py-1 rounded text-xs font-medium">Prisma</span>
             </div>
             <div className="mt-auto flex gap-3">
-              <a href="https://github.com/yourusername/ecommerce-store" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a>
               <a href="https://ecommerce-store.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Live Demo</a>
             </div>
           </SpotlightCard>
@@ -118,7 +138,7 @@ export default function Home() {
 </GradientText>
 
         <p className="max-w-2xl text-center mt-2 mb-6">Feel free to reach out for collaborations or just a friendly hello!</p>
-        <form className="w-full max-w-xl bg-black/60 rounded-xl p-12 shadow-lg flex flex-col gap-6">
+        <form className="w-full max-w-xl bg-black/60 rounded-xl p-12 shadow-lg flex flex-col gap-6" onSubmit={onSubmit}>
           <input
             type="text"
             name="name"
@@ -162,6 +182,7 @@ export default function Home() {
             
           </button>
         </form>
+        <span className="mt-4 text-lg text-black dark:text-white">{result}</span>
       </section>
        {/* About Section */}
        <section id="about" className="min-h-screen flex flex-col items-center from-black to-gray-900 text-white mt-20 ">
@@ -174,8 +195,8 @@ export default function Home() {
   About Me
 </GradientText>
 
-        <p className="max-w-2xl text-center mt-2 mb-20">I am aa passionate developer with experience in building beautiful and performant web applications using modern technologies.</p>
-        <div className="flex gap-6 mt-80">
+        <p className="max-w-2xl text-center mt-2 mb-20">I am a creative developer with experience in building beautiful and performant web applications using modern technologies.</p>
+        <div className="flex gap-6">
           <a href="https://www.linkedin.com/in/eyram-kwawukume/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg text-white hover:text-[#40ffaa] transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.034 0 3.595 1.997 3.595 4.59v5.606z"/></svg>
             LinkedIn
