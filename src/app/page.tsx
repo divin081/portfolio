@@ -94,7 +94,7 @@ export default function Home() {
               <span className="bg-gray-700 px-2 py-1 rounded text-xs font-medium">TypeScript</span>
             </div>
             <div className="mt-auto flex gap-3 items-center">
-              <a href="https:globalfootballfestival.pages.dev" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Live Demo</a>
+              <a href="https://globalfootballfestival.pages.dev/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Live Demo</a>
             </div>
           </SpotlightCard>
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
