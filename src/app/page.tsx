@@ -3,7 +3,6 @@
 import ProfileCard from '../../components/profile'
 import SplitText from '../../components/splitText'
 import GradientText from '../../components/gradientText'
-
 import SpotlightCard from '../../components/spotlightCard'
 import React from 'react';
 import Image from "next/image";
